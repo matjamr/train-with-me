@@ -1,0 +1,4 @@
+.idea/*
+/backend/.idea/
+.auth-server/.mvn/
+.auth-server/mvnw*/

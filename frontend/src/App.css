@@ -1,0 +1,44 @@
+body {
+  background-color: #7784F8;
+  color: white;
+  overflow: scroll;
+}
+
+.btn-standard {
+  background-color: #5862BB;
+  padding: 0.5em;
+  border-radius: 10px;
+  box-shadow: 3px 3px #555fb5;
+}
+
+.btn-standard:hover {
+  background-color: #41488a;
+  cursor: pointer;
+}
+
+.btn-standard:active {
+  cursor: grabbing;
+}
+
+.highlighted {
+  background-color: #434B92;
+  padding: 0.5em;
+  border-radius: 20px;
+  box-shadow: 3px 3px #555fb5;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.profile-img {
+  border-radius: 50%;
+  border-color: #434B92;
+  border-width: 3px;
+}
