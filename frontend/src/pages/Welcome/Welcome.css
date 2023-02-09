@@ -23,7 +23,7 @@
 }
 
 .my-container {
-    display: flex;  
+    display: flex;
     flex-direction: column;
 }
 
