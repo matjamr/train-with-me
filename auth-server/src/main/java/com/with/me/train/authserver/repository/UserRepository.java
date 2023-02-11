@@ -1,6 +1,6 @@
 package com.with.me.train.authserver.repository;
 
-import com.with.me.train.authserver.entity.User;
+import com.with.me.train.authserver.model.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

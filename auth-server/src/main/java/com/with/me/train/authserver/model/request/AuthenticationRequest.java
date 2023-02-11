@@ -1,4 +1,4 @@
-package com.with.me.train.authserver.auth;
+package com.with.me.train.authserver.model.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationResponse {
+public class AuthenticationRequest {
 
-    private String token;
+    private String email;
+    private String password;
 }

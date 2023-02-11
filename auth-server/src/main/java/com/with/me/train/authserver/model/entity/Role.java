@@ -1,4 +1,4 @@
-package com.with.me.train.authserver.entity;
+package com.with.me.train.authserver.model.entity;
 
 public enum Role {
     USER,
