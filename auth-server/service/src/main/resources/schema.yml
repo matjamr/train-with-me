@@ -1,0 +1,128 @@
+openapi: 3.0.0
+info:
+  title: Basic api test
+  version: '1'
+servers:
+  - url: http://localhost:8050
+paths:
+  /user:
+    get:
+      summary: List all users
+      operationId: getUsers
+      tags:
+        - users
+      parameters:
+        - name: limit
+          in: query
+          description: 'How many items to return at one time (max 100)'
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: A paged array of users
+          headers:
+            x-next:
+              description: A link to the next page of responses
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Users"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /user/{id}:
+    get:
+      summary: Info for a specific user
+      operationId: showUserById
+      tags:
+        - user
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the user to retrieve
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        firstname:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        createdAt:
+          type: integer
+        role:
+          $ref: '#/components/schemas/Role'
+    Role:
+      type: string
+
+    Users:
+      type: array
+      items:
+        $ref: '#/components/schemas/User'
+    Training:
+      type: object
+      properties:
+        overallRating:
+          type: string
+        trainingLevel:
+          type: string
+        description:
+          type: string
+        title:
+          type: string
+        imageUrl:
+          type: string
+        createdBy:
+          $ref: "#/components/schemas/User"
+    Rating:
+      type: object
+      properties:
+        title:
+          type: object
+        stars:
+          type: object
+        createdBy:
+          $ref: "#/components/schemas/User"
+        training:
+          $ref: "#/components/schemas/Training"
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
