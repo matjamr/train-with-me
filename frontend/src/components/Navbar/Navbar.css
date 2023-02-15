@@ -1,0 +1,23 @@
+.navbar {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.navbar-element.max-right {
+    font-size: 40;
+    top: 1vh;
+    right: 7%;
+    position: absolute;
+    font-weight: 500;
+}
+
+.navbar-element.max-left {
+    top: 0.5vh;
+    font-size: 1.5em;
+    left: 7%;
+    position: absolute;
+    font-weight: 700;
+}

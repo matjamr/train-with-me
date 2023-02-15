@@ -1,7 +1,11 @@
 body {
     background-color: #7784F8;
     color: white;
-    overflow: scroll;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .btn-standard {

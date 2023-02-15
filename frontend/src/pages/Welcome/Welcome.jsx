@@ -1,12 +1,9 @@
 import React from 'react'
-import {Button} from '../../components/Welcome/Button'
+import { Link } from 'react-router-dom'
+import { Button } from '../../components/Welcome/Button'
 import './Welcome.css'
 
 const Welcome = () => {
-
-    const handleOnLoginRegisterBtnClicked = () => {
-        console.log("nigger");
-    }
 
     return (
         <div className='my-container'>
@@ -15,10 +12,11 @@ const Welcome = () => {
                     <h2>FuckinUiDotCom</h2>
                 </div>
                 <Button
-                    className='navbar-element max-right'
-                    onClick={handleOnLoginRegisterBtnClicked}
+                    className='navbar-element max-right noselect'
                 >
-                    Login / Register
+                    <Link to="/login"> 
+                        Login / Register
+                    </Link>
                 </Button>
             </div>
             <div className='content'>
@@ -100,7 +98,7 @@ const Welcome = () => {
                 </div>
             </div>
             <div className='footer'>
-                Copyright
+                Copyright &copy; 2021
             </div>
         </div>
     )
