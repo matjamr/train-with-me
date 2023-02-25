@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.openapitools.api.UserApi;
 import org.openapitools.model.UserDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.NativeWebRequest;
 
@@ -33,5 +34,10 @@ public class UserController implements UserApi {
         return ResponseEntity.ok(userRepository.findById(id)
                 .map(UserMapper.INSTANCE::mapTo)
                 .orElse(null));
+    }
+
+    @GetMapping("/list")
+    public String test() {
+        return "asdawda";
     }
 }
